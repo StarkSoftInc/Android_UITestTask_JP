@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ory.stark.esigntesttask.R
 import com.ory.stark.esigntesttask.databinding.FragmentHomeBinding
+import com.ory.stark.esigntesttask.ui.RelativesOffsetDecorator
 
 class HomeFragment : Fragment() {
 
@@ -20,22 +20,44 @@ class HomeFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private val recentActionsAdapter = RecentActionsAdapter(
+        arrayListOf(
+            RecentAction("Lease Agreement.pdf", DocumentStatus.Signed),
+            RecentAction("Durable Power of Attorney.pdf", DocumentStatus.Voided),
+            RecentAction("Motor Vehicle Bill of Sale Form.docx", DocumentStatus.Waiting),
+            RecentAction("Residential Month-to-Month to…pdf", DocumentStatus.Signed)
+        )
+    )
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+            ViewModelProvider(this)[HomeViewModel::class.java]
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+        _binding?.homePageRecentActions?.run {
+            hasFixedSize()
+            layoutManager = LinearLayoutManager(
+                requireContext(),
+                LinearLayoutManager.VERTICAL, false
+            )
+            setHasFixedSize(false)
+
+            adapter = recentActionsAdapter
+
+            addItemDecoration(
+                RelativesOffsetDecorator(
+                    itemOffsetTopId = resources.getDimensionPixelSize(R.dimen.dp_4),
+                    itemOffsetBottomId = resources.getDimensionPixelSize(R.dimen.dp_4)
+                )
+            )
+        }
+
+        return binding.root
     }
 
     override fun onDestroyView() {

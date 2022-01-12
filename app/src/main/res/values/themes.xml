@@ -1,16 +1,57 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.EsignTestTask" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+    <!--Top-level theme-->
+    <style name="Theme.EsignTestTask.DayNight" parent="Theme.EsignTestTask" />
+
+    <style name="Theme.EsignTestTask" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!--        theme colors-->
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/cod_gray</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/dodger_blue</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+        <item name="android:windowBackground">@color/cod_gray</item>
+
+
+        <!--        text colors-->
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorLink">?attr/colorPrimary</item>
+        <item name="android:textColorHint">@color/whisper_60_alpha</item>
+        <item name="android:textColorSecondary">@color/whisper_60_alpha</item>
+
+
+        <!--region buttons styles-->
+        <item name="materialButtonStyle">@style/EsignTestTask.Button</item>
+        <item name="android:buttonStyle">@style/EsignTestTask.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/EsignTestTask.ButtonOutline</item>
+        <item name="textButtonStyle">@style/EsignTestTask.ButtonText</item>
+        <!--        endregion-->
+
+        <!--region Typography-->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.EsignTestTask.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.EsignTestTask.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.EsignTestTask.Headline3</item>
+
+        <item name="textAppearanceButton">@style/TextAppearance.EsignTestTask.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.EsignTestTask.Overline</item>
+
+        <item name="textAppearanceBody2">@style/TextAppearance.EsignTestTask.Body2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.EsignTestTask.Body1</item>
+
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.EsignTestTask.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.EsignTestTask.Subtitle2</item>
+
+        <item name="textAppearanceCaption">@style/TextAppearance.EsignTestTask.Caption</item>
+        <!--        endregion-->
+
+        <item name="circularProgressIndicatorStyle">@style/Widget.EsignTestTask.CircularProgressIndicator</item>
     </style>
 </resources>

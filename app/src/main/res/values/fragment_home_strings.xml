@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_page_title">Home</string>
+    <string name="home_page_start_btn_text">start</string>
+    <string name="home_page_sign_requests_text">Sign requests sent this month</string>
+    <string name="home_page_upgrade_btn_text">Upgrade</string>
+    <string name="home_page_action_required_text">Action required</string>
+    <string name="home_page_waiting_text">Waiting for others</string>
+    <string name="home_page_signed_text">Signed</string>
+    <string name="home_page_recent_activity_title">Recent activity</string>
+
+<!--    region statuses-->
+    <string name="voided">Voided</string>
+    <string name="signed">Signed</string>
+    <string name="waiting">Waiting for others</string>
+<!--    endregion-->
+</resources>

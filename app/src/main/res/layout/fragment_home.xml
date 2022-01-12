@@ -4,19 +4,382 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="@dimen/dp_8"
+
+    android:paddingTop="@dimen/dp_10"
+    android:paddingEnd="@dimen/dp_8"
     tools:context=".ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/text_home"
+        android:id="@+id/home_page_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/home_page_title"
+
+        android:textAppearance="?textAppearanceHeadline1"
+        app:layout_constraintEnd_toStartOf="@id/home_page_user_avatar"
+
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/home_page_user_avatar"
+
+        android:layout_width="@dimen/dp_44"
+        android:layout_height="@dimen/dp_44"
+
+        android:background="?android:attr/windowBackground"
+        android:src="@drawable/ic_launcher_background"
+
+        app:layout_constraintBottom_toBottomOf="@id/home_page_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/home_page_title"
+        app:layout_constraintTop_toTopOf="@id/home_page_title"
+
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.EsignTestTask.CornerSize50Percent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/home_page_start_btn"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+
+        android:layout_marginTop="@dimen/dp_24"
+        android:text="@string/home_page_start_btn_text"
+
+        android:textAllCaps="true"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_page_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_marginTop="@dimen/dp_20"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/home_page_start_btn">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--    todo: move bg to themed res-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_page_sign_requests"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/stroke_bg"
+                android:paddingStart="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_6"
+                android:paddingEnd="@dimen/dp_10"
+
+                android:paddingBottom="@dimen/dp_6"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/home_page_sign_requests_title"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/home_page_sign_requests_text"
+                    android:textAppearance="?textAppearanceBody1"
+
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/home_page_upgrade_btn"
+
+                    style="?attr/materialButtonOutlinedStyle"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_34"
+                    android:minWidth="0dp"
+
+                    android:text="@string/home_page_upgrade_btn_text"
+                    android:textSize="@dimen/sp_11"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/upgrade_guideline"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/upgrade_guideline"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.75" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/home_page_requests_progress"
+
+                    style="?attr/circularProgressIndicatorStyle"
+
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_14"
+
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:layout_marginEnd="@dimen/dp_4"
+
+                    android:max="3"
+                    android:progress="1"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/home_page_requests_progress_txt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_page_sign_requests_title" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/home_page_requests_progress_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="1/3"
+                    android:textAppearance="?textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+
+                    app:layout_constraintBottom_toBottomOf="@id/home_page_requests_progress"
+                    app:layout_constraintEnd_toEndOf="@id/home_page_sign_requests_title"
+                    app:layout_constraintStart_toEndOf="@id/home_page_requests_progress"
+                    app:layout_constraintTop_toTopOf="@id/home_page_requests_progress"
+                    tools:ignore="HardcodedText" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_page_actions_required"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/dp_24"
+                android:background="@drawable/solid_bg"
+
+                android:padding="@dimen/dp_10"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_page_sign_requests">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/home_page_actions_required_count"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="2"
+
+                    android:textAppearance="?textAppearanceHeadline1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/home_page_action_required_text"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="@dimen/dp_12"
+                    android:text="@string/home_page_action_required_text"
+
+                    android:textAppearance="?textAppearanceHeadline3"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/home_page_action_required_icon"
+                    app:layout_constraintStart_toEndOf="@id/home_page_actions_required_count"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/home_page_action_required_icon"
+
+                    android:layout_width="@dimen/dp_36"
+                    android:layout_height="@dimen/dp_36"
+
+                    android:src="@drawable/ic_action_required"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/home_page_action_required_text"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_page_waiting"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/solid_bg"
+
+                android:padding="@dimen/dp_10"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_page_actions_required">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/home_page_waiting_count"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="1"
+
+                    android:textAppearance="?textAppearanceHeadline1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/home_page_waiting_text"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="@dimen/dp_12"
+                    android:text="@string/home_page_waiting_text"
+
+                    android:textAppearance="?textAppearanceHeadline3"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/home_page_waiting_icon"
+                    app:layout_constraintStart_toEndOf="@id/home_page_waiting_count"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/home_page_waiting_icon"
+
+                    android:layout_width="@dimen/dp_36"
+                    android:layout_height="@dimen/dp_36"
+
+                    android:src="@drawable/ic_waiting"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/home_page_waiting_text"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home_page_signed"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/solid_bg"
+
+                android:padding="@dimen/dp_10"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_page_waiting">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/home_page_signed_count"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="7"
+
+                    android:textAppearance="?textAppearanceHeadline1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/home_page_signed_text"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="@dimen/dp_12"
+                    android:text="@string/home_page_signed_text"
+
+                    android:textAppearance="?textAppearanceHeadline3"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/home_page_signed_icon"
+                    app:layout_constraintStart_toEndOf="@id/home_page_signed_count"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/home_page_signed_icon"
+
+                    android:layout_width="@dimen/dp_36"
+                    android:layout_height="@dimen/dp_36"
+
+                    android:src="@drawable/ic_signed"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/home_page_signed_text"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/home_page_recent_activities_title"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/dp_24"
+
+                android:text="@string/home_page_recent_activity_title"
+                android:textAppearance="?textAppearanceSubtitle1"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_page_signed" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_page_recent_actions"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/dp_6"
+                android:background="@drawable/solid_bg"
+
+                android:paddingStart="@dimen/dp_16"
+                android:paddingTop="@dimen/dp_14"
+                android:paddingEnd="@dimen/dp_16"
+                android:paddingBottom="@dimen/dp_14"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_page_recent_activities_title"
+
+                tools:itemCount="5"
+                tools:listitem="@layout/home_fragment_recent_item" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
