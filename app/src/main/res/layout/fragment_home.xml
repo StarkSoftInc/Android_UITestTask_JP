@@ -69,7 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
 
-        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_24"
         android:overScrollMode="never"
         android:scrollbars="none"
 
@@ -82,14 +82,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!--    todo: move bg to themed res-->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/home_page_sign_requests"
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:background="@drawable/stroke_bg"
+                android:background="?strokeCardBackground"
                 android:paddingStart="@dimen/dp_10"
                 android:paddingTop="@dimen/dp_6"
                 android:paddingEnd="@dimen/dp_10"
@@ -182,7 +181,8 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginTop="@dimen/dp_24"
-                android:background="@drawable/solid_bg"
+                app:layout_goneMarginTop="0dp"
+                android:background="?cardBackground"
 
                 android:padding="@dimen/dp_10"
 
@@ -242,7 +242,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginTop="@dimen/dp_10"
-                android:background="@drawable/solid_bg"
+                android:background="?cardBackground"
 
                 android:padding="@dimen/dp_10"
 
@@ -302,7 +302,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginTop="@dimen/dp_10"
-                android:background="@drawable/solid_bg"
+                android:background="?cardBackground"
 
                 android:padding="@dimen/dp_10"
 
@@ -376,7 +376,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginTop="@dimen/dp_6"
-                android:background="@drawable/solid_bg"
+                android:background="?cardBackground"
 
                 android:paddingStart="@dimen/dp_16"
                 android:paddingTop="@dimen/dp_14"

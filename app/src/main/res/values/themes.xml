@@ -48,10 +48,11 @@
 
         <item name="textAppearanceSubtitle1">@style/TextAppearance.EsignTestTask.Subtitle1</item>
         <item name="textAppearanceSubtitle2">@style/TextAppearance.EsignTestTask.Subtitle2</item>
-
-        <item name="textAppearanceCaption">@style/TextAppearance.EsignTestTask.Caption</item>
         <!--        endregion-->
 
         <item name="circularProgressIndicatorStyle">@style/Widget.EsignTestTask.CircularProgressIndicator</item>
+
+        <item name="strokeCardBackground">@drawable/stroke_bg</item>
+        <item name="cardBackground">@drawable/solid_bg</item>
     </style>
 </resources>

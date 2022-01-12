@@ -4,4 +4,7 @@
     <!--    Custom typo attrs-->
     <attr name="textButtonStyle" format="reference" />
 
+    <attr name="cardBackground" format="reference" />
+    <attr name="strokeCardBackground" format="reference" />
+
 </resources>

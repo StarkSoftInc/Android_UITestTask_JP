@@ -13,7 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
-/.idea/.gitignore
+/.idea
 /.idea/compiler.xml
 /.idea/gradle.xml
 /.idea/misc.xml
@@ -21,3 +21,4 @@ local.properties
 /gradlew
 /gradlew.bat
 /gradle/wrapper/gradle-wrapper.jar
+/.idea/deploymentTargetDropDown.xml
