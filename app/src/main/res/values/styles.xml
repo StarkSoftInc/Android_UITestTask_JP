@@ -1,6 +1,5 @@
 <resources>
 
-
     <!--    region Buttons-->
     <style name="EsignTestTask.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:layout_height">@dimen/dp_44</item>
@@ -17,21 +16,8 @@
 
     <style name="EsignTestTask.ButtonOutline" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="backgroundTint">@color/whisper_60_alpha</item>
-        <item name="materialThemeOverlay">@style/EsignTestTaskSecondaryButtonThemeOverlay</item>
         <item name="android:textAppearance">?attr/textAppearanceButton</item>
         <item name="android:textColor">@color/white</item>
-    </style>
-
-    <style name="EsignTestTaskSecondaryButtonThemeOverlay">
-<!--        <item name="colorPrimary">@color/pickled_bluewood</item>-->
-    </style>
-
-    <style name="EsignTestTask.ButtonOutlinePrimaryColor" parent="EsignTestTask.ButtonOutline">
-        <item name="materialThemeOverlay">@style/EsignTestTaskSecondaryButtonPrimaryColorThemeOverlay</item>
-    </style>
-
-    <style name="EsignTestTaskSecondaryButtonPrimaryColorThemeOverlay">
-<!--        <item name="colorPrimary">@color/violet_red</item>-->
     </style>
 
     <style name="EsignTestTask.ButtonText" parent="Widget.MaterialComponents.Button.TextButton">
@@ -45,7 +31,6 @@
     <style name="ShapeAppearanceOverlay.EsignTestTask.CornerSize50Percent" parent="">
         <item name="cornerSize">50%</item>
     </style>
-
 
     <style name="Widget.EsignTestTask.CircularProgressIndicator" parent="Widget.MaterialComponents.CircularProgressIndicator">
         <item name="trackThickness">@dimen/dp_10</item>

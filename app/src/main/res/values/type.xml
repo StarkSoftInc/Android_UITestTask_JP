@@ -49,7 +49,7 @@
 
     <!--    Subtitle 1 (Semibold 1)-->
     <style name="TextAppearance.EsignTestTask.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:letterSpacing">0</item>
     </style>
 

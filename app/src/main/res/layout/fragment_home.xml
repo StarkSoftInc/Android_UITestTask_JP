@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
     android:paddingStart="@dimen/dp_8"
 
     android:paddingTop="@dimen/dp_10"
@@ -89,11 +90,10 @@
                 android:layout_height="wrap_content"
 
                 android:background="?strokeCardBackground"
-                android:paddingStart="@dimen/dp_10"
-                android:paddingTop="@dimen/dp_6"
-                android:paddingEnd="@dimen/dp_10"
-
-                android:paddingBottom="@dimen/dp_6"
+                android:paddingStart="@dimen/dp_12"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingEnd="@dimen/dp_12"
+                android:paddingBottom="@dimen/dp_10"
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -147,7 +147,7 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/dp_14"
 
-                    android:layout_marginTop="@dimen/dp_6"
+                    android:layout_marginTop="@dimen/dp_8"
                     android:layout_marginEnd="@dimen/dp_4"
 
                     android:max="3"
@@ -361,7 +361,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_26"
 
                 android:text="@string/home_page_recent_activity_title"
                 android:textAppearance="?textAppearanceSubtitle1"
