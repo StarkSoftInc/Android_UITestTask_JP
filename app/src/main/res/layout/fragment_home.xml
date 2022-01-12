@@ -18,9 +18,7 @@
         android:text="@string/home_page_title"
 
         android:textAppearance="?textAppearanceHeadline1"
-        app:layout_constraintEnd_toStartOf="@id/home_page_user_avatar"
 
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,11 +32,23 @@
         android:src="@drawable/ic_launcher_background"
 
         app:layout_constraintBottom_toBottomOf="@id/home_page_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/home_page_title"
+        app:layout_constraintEnd_toStartOf="@id/home_page_account_drop_down"
         app:layout_constraintTop_toTopOf="@id/home_page_title"
 
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.EsignTestTask.CornerSize50Percent" />
+
+    <ImageView
+        android:id="@+id/home_page_account_drop_down"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/ic_arrow_drop_down"
+
+
+        app:layout_constraintTop_toTopOf="@id/home_page_user_avatar"
+        app:layout_constraintBottom_toBottomOf="@id/home_page_user_avatar"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/home_page_start_btn"
